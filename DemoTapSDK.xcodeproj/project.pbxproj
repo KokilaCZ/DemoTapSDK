@@ -18,9 +18,11 @@
 		5760D2002A7A29AD00E33610 /* TapChargeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760D1FF2A7A29AD00E33610 /* TapChargeModel.swift */; };
 		5760D2022A7A350200E33610 /* WebContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760D2012A7A350200E33610 /* WebContentVC.swift */; };
 		5760D2042A7A36CD00E33610 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760D2032A7A36CD00E33610 /* Helper.swift */; };
+		C2C6ECA8C8500EDF83F8419F /* Pods_DemoTapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4586F460F2B6244397A59056 /* Pods_DemoTapSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4586F460F2B6244397A59056 /* Pods_DemoTapSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoTapSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5760D1E32A7A211E00E33610 /* DemoTapSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoTapSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5760D1E62A7A211E00E33610 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5760D1E82A7A211E00E33610 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +35,8 @@
 		5760D1FF2A7A29AD00E33610 /* TapChargeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapChargeModel.swift; sourceTree = "<group>"; };
 		5760D2012A7A350200E33610 /* WebContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebContentVC.swift; sourceTree = "<group>"; };
 		5760D2032A7A36CD00E33610 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		6FEE69993D3928DE0A0D4CF7 /* Pods-DemoTapSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTapSDK.debug.xcconfig"; path = "Target Support Files/Pods-DemoTapSDK/Pods-DemoTapSDK.debug.xcconfig"; sourceTree = "<group>"; };
+		D5DEA7E7D274DFB7E08ADEFE /* Pods-DemoTapSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTapSDK.release.xcconfig"; path = "Target Support Files/Pods-DemoTapSDK/Pods-DemoTapSDK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5760D1FE2A7A248100E33610 /* Alamofire in Frameworks */,
+				C2C6ECA8C8500EDF83F8419F /* Pods_DemoTapSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +57,8 @@
 			children = (
 				5760D1E52A7A211E00E33610 /* DemoTapSDK */,
 				5760D1E42A7A211E00E33610 /* Products */,
+				DD7936230C2B17A29EFB5B44 /* Pods */,
+				9181DDDC5D9CACDCDDBD60D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +112,24 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		9181DDDC5D9CACDCDDBD60D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4586F460F2B6244397A59056 /* Pods_DemoTapSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD7936230C2B17A29EFB5B44 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6FEE69993D3928DE0A0D4CF7 /* Pods-DemoTapSDK.debug.xcconfig */,
+				D5DEA7E7D274DFB7E08ADEFE /* Pods-DemoTapSDK.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,9 +137,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5760D1F72A7A211F00E33610 /* Build configuration list for PBXNativeTarget "DemoTapSDK" */;
 			buildPhases = (
+				85FF0A3F9E23F810B05A8ED5 /* [CP] Check Pods Manifest.lock */,
 				5760D1DF2A7A211E00E33610 /* Sources */,
 				5760D1E02A7A211E00E33610 /* Frameworks */,
 				5760D1E12A7A211E00E33610 /* Resources */,
+				ABA934CE394392E17BFDC629 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,7 +180,7 @@
 			);
 			mainGroup = 5760D1DA2A7A211E00E33610;
 			packageReferences = (
-				5760D1FC2A7A248100E33610 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5760D1FC2A7A248100E33610 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
 			);
 			productRefGroup = 5760D1E42A7A211E00E33610 /* Products */;
 			projectDirPath = "";
@@ -176,6 +203,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		85FF0A3F9E23F810B05A8ED5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoTapSDK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABA934CE394392E17BFDC629 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoTapSDK/Pods-DemoTapSDK-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoTapSDK/Pods-DemoTapSDK-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoTapSDK/Pods-DemoTapSDK-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5760D1DF2A7A211E00E33610 /* Sources */ = {
@@ -335,6 +404,7 @@
 		};
 		5760D1F82A7A211F00E33610 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FEE69993D3928DE0A0D4CF7 /* Pods-DemoTapSDK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -366,6 +436,7 @@
 		};
 		5760D1F92A7A211F00E33610 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5DEA7E7D274DFB7E08ADEFE /* Pods-DemoTapSDK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -419,7 +490,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5760D1FC2A7A248100E33610 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		5760D1FC2A7A248100E33610 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -432,7 +503,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		5760D1FD2A7A248100E33610 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5760D1FC2A7A248100E33610 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 5760D1FC2A7A248100E33610 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

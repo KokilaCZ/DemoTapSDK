@@ -7,14 +7,19 @@
 
 import UIKit
 import Alamofire
+import goSellSDK
 
-class ViewController: UIViewController {
+class MainVC: UIViewController {
+    
+    @IBOutlet weak var payButton: PayButton!
     
     let vm = ViewModel();
+    var knownCustomer = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        payButton.delegate = self
+        payButton.dataSource = self
     }
 
     func navigateToWebView(_ urlString: String) {
@@ -23,7 +28,6 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-
     @IBAction func payAction(_ sender: Any) {
         vm.tapChargeNetworkRequest(decodable: TapChargeModel.self) { [weak self] response, error, code in
             guard let _ = self else { return }
@@ -33,6 +37,62 @@ class ViewController: UIViewController {
                 print(String(data: error as! Data, encoding: String.Encoding.utf8) ?? "")
             }
         }
+    }
+}
+
+extension MainVC: goSellSDK.SessionDelegate, goSellSDK.SessionDataSource {
+    
+    var customer: goSellSDK.Customer? {
+        if knownCustomer {
+            return self.identifiedCustomer
+        } else {
+            return self.newCustomer
+        }
+    }
+
+    /// Creating a customer with known identifier received from Tap before.
+    var identifiedCustomer: goSellSDK.Customer? {
+        return try? goSellSDK.Customer(identifier: "")
+    }
+
+    /// Creating a customer with raw information.
+    var newCustomer: goSellSDK.Customer? {
+        let emailAddress = try! EmailAddress(emailAddressString: "customer@mail.com")
+        let phoneNumber = try! PhoneNumber(isdNumber: "965", phoneNumber: "96512345")
+            
+        return try? goSellSDK.Customer(emailAddress: emailAddress, phoneNumber: phoneNumber, name: "Test User")
+    }
+    
+    var currency: Currency? {
+        return .with(isoCode: "KWD")
+    }
+    
+    var amount: Decimal {
+        return 1.0
+    }
+    
+    var postURL: URL? {
+        return URL(string: "https://tap.company/post")
+    }
+    
+    private var receiptSettings: Receipt? {
+        return Receipt(email: true, sms: true)
+    }
+    
+    var allowsToSaveSameCardMoreThanOnce: Bool {
+        return false
+    }
+    
+    var applePayMerchantID: String {
+        return "merchant.com.example"
+    }
+    
+    func paymentSucceed(_ charge: Charge, on session: SessionProtocol) {
+        print("Payment Success")
+    }
+    
+    func paymentFailed(with charge: Charge?, error: TapSDKError?, on session: SessionProtocol) {
+        print("Payment Failed")
     }
 }
 
