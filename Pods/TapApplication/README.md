@@ -1,2 +1,0 @@
-# TapApplication-iOS
-Application Interface
